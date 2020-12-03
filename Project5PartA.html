@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!--
+Part A (33 Points) - Please build a JavaScript Solution that will accomplish the following. 
+
+Use a nested if statement to accomplish the following.
+
+Get two values from the user. The first with be their critical reading score and the second will be their math score.
+
+The scores must be between 200 and 800. Verify that the scores are between 200 and 800 inclusive.
+
+If the applicant has a combined score of over 1200 on the test they will be offered "unconditional" admission to the college.
+
+If the applicant has a score of over 1000 on the test with at least one section either equal to or over 600 they will be offered "provisional" admission to the college.
+
+If the applicant has a combined score that is equal to or greater than 1000 they will be offered "probationary" admission to the college.
+
+Otherwise, they will not be offered admission to the college.
+
+Test your code with varying test scores.
+ else {
+  if (CriticalReading + MathScore <= 1000){
+         msg = "You have offered probationary admission to the college."
+         
+    }
+    else {
+     if (CriticalReading + MathScore > 1000 && CriticalReading >= 600 || MathScore >= 600){
+         msg = "You have offered provisional admission to the college."
+     } 
+     else {
+       (CriticalReading + MathScore > 1200) 
+        msg = "You have offered unconditional admission to the college."
+     }
+     }
+    }
+ }
+  
+-->
+<h2>Admission to College</h2>
+<p>Please input a scores between 200 and 800.</p>
+<p>Insert below you Critical Reading Score:</p>
+<input id="CriticalReading">
+<p>Insert below you Critical Math Score:</p>
+<input id="MathScore">
+
+<p><button type="button" onclick="myFunction()">Submit</button></p>
+
+<p id="demo"></p>
+
+<script>
+  function myFunction() {
+    var CriticalReading;
+    var MathScore;
+    var CombinedScore;
+    var msg;
+    
+    CriticalReading = document.getElementById("CriticalReading").value;
+    MathScore = document.getElementById("MathScore").value;
+    
+  if (CriticalReading < 200 || CriticalReading > 800 || MathScore < 200 || MathScore > 800){
+
+    msg = "Wrong score value.";
+
+  } else  if (CriticalReading + MathScore <= 1000); {
+
+      msg = "You have offered probationary admission to the college."; 
+
+    } 
+    if (CriticalReading + MathScore > 1000 && CriticalReading >= 600 || MathScore >= 600){
+
+        msg = "You have offered provisional admission to the college.";
+      }     
+       else (CriticalReading + MathScore > 1200); {
+
+         msg = "You have offered unconditional admission to the college.";
+
+        }
+  
+            document.getElementById("demo").innerHTML = msg;
+
+            }
+</script>
+</body>
+</html> 
